@@ -21,18 +21,15 @@ def main():
         if bet_value <= player.get_money():
             game(bet_value, player)
         else:
-            print("Je suis désolé mais vous n'avez pas assez de crédit ")
+            print("\nJe suis désolé mais vous n'avez pas assez de crédit ")
             print("\n_________________________________________________")
 
     if player.get_money() < 1:
-        print("\n_________________________________________________")
         print("\nJe suis désolé mais vous avez perdu tout vos crédits.\nVous aurez plus de chance la prochaine fois.")
         print("\n_________________________________________________")
         still_playing = input("\nVoulez-vous recommencer la partie ? oui/non ")
         if still_playing == "oui":
-            money = int(input("\n Combien de crédit voulez-vous acheter? "))
-            player.win_money(money)
-            play()
+            main()
         else:
             print("\n_________________________________________________")
             print("Au revoir " + player.get_name())
